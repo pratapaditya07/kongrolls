@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=Finger+Paint&display=swap');
+@font-face {
+    font-family: "mcf";
+    src: url("fatcat.ttf") format("truetype");
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#preloader{
+    height: 100vh;
+    width: 100%;
+    background: #1774BD;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: fadeaway 2.5s forwards;
+    animation-delay: 3.8s;
+    position: absolute;
+}
+
+@keyframes fadeaway {
+    0%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+    }
+}
+
+#content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#content img{
+    animation: logoanime 5s linear forwards;
+    margin-bottom: 2vh;
+}
+
+@keyframes logoanime {
+    0%{
+        scale: 1;
+    }
+    100%{
+        scale: 1.3;
+    }
+}
+
+#slider{
+    width: 18vw;
+    height: 1.2vh;
+    background: #1774BD;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+#slider::after{
+    content: '';
+    width: 100%;
+    height: 100%;
+    background: #f4f4f4;
+    border-radius: 10px;
+    display: block;
+    animation: slider 5s infinite;
+}
+
+@keyframes slider{
+    0%{
+        transform: translateX(-100%);
+    }
+    100%{
+        transform: translateX(100%);
+    }
+}   
+
+#preloader p{
+    font-family: 'mcf', sans-serif;
+    font-size: 1vw;
+    letter-spacing: 0.15vw;
+    color: #fff;
+    margin-top: 2vh;
+}
+
+
+#hero{
+    height: 100vh;
+    width: 100%;
+    background: #1774BD;
+}
+
+#hero video{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+
