@@ -31,15 +31,79 @@ gsap.from("#wr8 img", {
 });
 
 
-gsap.from(".wrm h1", {
-    y: "50%",
+gsap.to("#wr1 h1", {
+    y: "-150%",
     opacity: 0,
     scrollTrigger: {
-        trigger: ".wrm h1",
+        trigger: "#wr1 h1",
         scroll:".content",
-        markers: true,
-        start: "top 50%",
-        end: "top 20%",
+        start: "top 72%",
+        end: "top 68.5%",
         scrub: 1
     }
 });
+
+gsap.to("#wr2 h1", {
+    y: "-150%",
+    opacity: 0,
+    scrollTrigger: {
+        trigger: "#wr2 h1",
+        scroll:".content",
+        start: "top 72%",
+        end: "top 69.5%",
+        scrub: 1
+    }
+});
+
+gsap.to("#wr3 h1", {
+    y: "-150%",
+    opacity: 0,
+    scrollTrigger: {
+        trigger: "#wr3 h1",
+        scroll:".content",
+        start: "top 72%",
+        end: "top 68.5%",
+        scrub: 1
+    }
+});
+
+gsap.to("#wr4 h1", {
+    y: "-150%",
+    opacity: 0,
+    scrollTrigger: {
+        trigger: "#wr4 h1",
+        scroll:".content",
+        start: "top 72%",
+        end: "top 68.5%",
+        scrub: 1
+    }
+});
+
+gsap.to("#wr5 h1", {
+    y: "-150%",
+    opacity: 0,
+    scrollTrigger: {
+        trigger: "#wr5 h1",
+        scroll:".content",
+        start: "top 72%",
+        end: "top 68.5%",
+        scrub: 1
+    }
+});
+
+gsap.to("#wr6 h1", {
+    y: "-150%",
+    opacity: 0,
+    scrollTrigger: {
+        trigger: "#wr6 h1",
+        scroll:".content",
+        start: "top 45%",
+        end: "top 38.5%",
+        scrub: 1
+    }
+});
+
+
+
+
+

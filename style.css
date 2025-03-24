@@ -120,7 +120,7 @@ nav{
 
 #navmid{
     height: 8vh;
-    width: min(50%, 500px);
+    width: min(70%, 550px);
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -230,6 +230,7 @@ nav button:hover{
     width: 100%;
     position: relative;
     z-index: 2;
+    border: 2px solid black;
 }
 
 .wrm img{
@@ -250,7 +251,7 @@ nav button:hover{
 .wrm p{
     position: absolute;
     color: #FDF5DE;
-    font-family: " Finger Paint", sans-serif;
+    font-family: "Finger Paint", sans-serif !important;
 }
 
 #wr1 h1{
