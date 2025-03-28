@@ -1,5 +1,5 @@
 
-document.addEventListener("scroll", () => {
+/* document.addEventListener("scroll", () => {
     const scrollingDiv = document.querySelector(".scrolling-div");
     if (!scrollingDiv) return;
     
@@ -17,7 +17,38 @@ document.addEventListener("scroll", () => {
 
     const index = Math.min(Math.floor(scrollPosition / window.innerHeight), images.length - 1);
     scrollingDiv.style.backgroundImage = `url('${images[index]}')`;
+}); */
+
+
+document.addEventListener("scroll", () => {
+    const scrollingDiv = document.querySelector(".scrolling-div");
+    if (!scrollingDiv) return;
+
+    const scrollPosition = window.scrollY;
+    const media = [
+        { loading:"lazy", type: "video", src: "media/opening_video.mp4" },
+        { type: "image", src: "media/image2.png" },
+        { type: "image", src: "media/image3.png" },
+        { type: "image", src: "media/image4.png" },
+        { type: "image", src: "media/image5.png" },
+        { type: "image", src: "media/image6.png" },
+        { type: "image", src: "media/image7.png" },
+        { type: "image", src: "media/image7.png" }
+    ];
+
+    const index = Math.min(Math.floor(scrollPosition / window.innerHeight), media.length - 1);
+    const currentMedia = media[index];
+
+    if (currentMedia.type === "video") {
+        scrollingDiv.innerHTML = `<video autoplay loop muted playsinline>
+        <source src="${currentMedia.src}" type="video/mp4"></video>`;
+    } else {
+        scrollingDiv.style.backgroundImage = `url('${currentMedia.src}')`;
+        scrollingDiv.innerHTML = ""; // Clear video if switching to an image
+    }
 });
+
+
 
 // GSAP Animation for #wr8 Image
 gsap.from("#wr8 img", {

@@ -232,7 +232,6 @@ nav button:hover{
     width: 100%;
     position: relative;
     z-index: 2;
-    border: 2px solid black;
 }
 
 .wrm img{
