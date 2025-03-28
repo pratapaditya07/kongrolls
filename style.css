@@ -13,25 +13,42 @@
 #preloader{
     height: 100vh;
     width: 100%;
-    background: #1774BD;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    background-color: #1774BD;
     animation: fadeaway 2.5s forwards;
-    animation-delay: 5.8s;
-    position: absolute;
+    animation-delay: 3.9s;
+    position: fixed;
 }
 
-#content{
+@keyframes fadeaway {
+    0%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+    }
+}
+
+#preloader_content{
+    height: 100vh;
+    width: 100%; 
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
-#content img{
+#preloader_content img{
     animation: logoanime 5s linear forwards;
     margin-bottom: 2vh;
+}
+
+@keyframes logoanime {
+    0%{
+        scale: 1;
+    }
+    100%{
+        scale: 1.3;
+    }
 }
 
 #slider{
@@ -52,23 +69,6 @@
     animation: slider 5.8s infinite;
 }   
 
-#preloader p{
-    font-family: 'mcf', sans-serif;
-    font-size: 1vw;
-    letter-spacing: 0.15vw;
-    color: #fff;
-    margin-top: 2vh;
-}
-
-@keyframes fadeaway {
-    0%{
-        opacity: 1;
-    }
-    100%{
-        opacity: 0;
-    }
-}
-
 @keyframes slider{
     0%{
         transform: translateX(-100%);
@@ -78,15 +78,28 @@
     }
 }
 
-@keyframes logoanime {
-    0%{
-        scale: 1;
-    }
-    100%{
-        scale: 1.3;
-    }
+#preloader p{
+    font-family: 'mcf', sans-serif;
+    font-size: 1vw;
+    letter-spacing: 0.15vw;
+    color: #fff;
+    margin-top: 2vh;
 }
 
+#hero{
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    overflow: hidden;
+}
+
+#hero video{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+} 
+
+/* ----------------------------------------NAVBAR------------------------------------- */
 
 nav{
     height: 15vh;
@@ -112,6 +125,8 @@ nav{
 
 #navleft img:hover{
     cursor: pointer;
+    scale: 1.5;
+    transition: 500ms ease;
 }
 
 #logoimage{
@@ -200,23 +215,8 @@ nav button:hover{
     height: 9vh;
 }
 
-#hero{
-    height: 100vh;
-    width: 100%;
-    position: fixed;
-    top: 0;
-    left: 0;
-    background-image: url(media/image1.png);
-    background-size: cover;
-    background-position: center;
-    transition: background-image 0.5s ease-in-out;
-}
 
-#hero video{
-    height: 10%;
-    width: 10%;
-    object-fit: cover;
-}
+
 
 .content{
     height: 820vh;
@@ -224,6 +224,8 @@ nav button:hover{
     position: absolute;
     overflow: hidden;
 }
+
+
 
 .wrm{
     height: 100vh;
