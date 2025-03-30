@@ -26,7 +26,7 @@ document.addEventListener("scroll", () => {
 
     const scrollPosition = window.scrollY;
     const media = [
-        { loading:"lazy", type: "video", src: "media/opening_video.mp4" },
+        { loading:"early", type: "video", src: "media/opening_video.mp4" },
         { type: "image", src: "media/image2.png" },
         { type: "image", src: "media/image3.png" },
         { type: "image", src: "media/image4.png" },
