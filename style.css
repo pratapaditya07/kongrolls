@@ -17,14 +17,17 @@
     animation: fadeaway 2.5s forwards;
     animation-delay: 3.9s;
     position: fixed;
+    z-index: 10;
 }
 
 @keyframes fadeaway {
     0%{
         opacity: 1;
+        z-index: 10;
     }
     100%{
         opacity: 0;
+        z-index: -1;
     }
 }
 
@@ -86,30 +89,53 @@
     margin-top: 2vh;
 }
 
-#hero{
+
+/* ----------------------------------------MAIN------------------------------------- */
+
+#main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     height: 100vh;
     width: 100%;
     position: fixed;
-    overflow: hidden;
+    background-position: center;
+    background-size: cover;
 }
 
-#hero video{
-    height: 100%;
+#main video{
     width: 100%;
+    height: 100%;
     object-fit: cover;
-} 
+    position: absolute;
+    z-index: -1;
+    filter: brightness(80%);
+}
+
 
 /* ----------------------------------------NAVBAR------------------------------------- */
 
 nav{
     height: 15vh;
-    width: 94%;
-    margin-left: 3%;
+    width: 100%;
+    padding: 0vw 2vw;
     display: flex;
     justify-content: space-between;
     align-items: center;
     position: fixed;
-    z-index: 10;
+    animation: navincoming 1600ms forwards;
+    animation-delay: 3.9s;
+    z-index: 9;
+}
+
+@keyframes navincoming {
+    0%{
+        scale: 0;
+    }
+    100%{
+        scale: 1;
+    }
+    
 }
 
 #navleft{
@@ -135,11 +161,10 @@ nav{
 
 #navmid{
     height: 8vh;
-    width: min(70%, 550px);
+    width: 38vw;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 1vw;
     background-color: #9ed4fe31;
     border: 1px solid #9ed4fe;
     border-radius: 5vw;
@@ -197,7 +222,7 @@ nav button:hover{
 #playbtn{
     position: absolute;
     top: 90vh;
-    right: 0;
+    right: 2vw;
 }
 
 #scrollerbtn{
@@ -215,144 +240,99 @@ nav button:hover{
     height: 9vh;
 }
 
+/* ----------------------------------------absolute_wala_div------------------------------------- */
 
-
-
-.content{
-    height: 820vh;
+#absolute_wala_div{
+    height: 100vh;
     width: 100%;
-    position: absolute;
-    overflow: hidden;
+    position: sticky;
+    top: 0;
+    left: 0;
+    scroll-snap-type: y mandatory;
+    scroll-behavior: smooth;
+    overflow-y: scroll;
 }
 
-
-
-.wrm{
+.written_material{
     height: 100vh;
     width: 100%;
     position: relative;
-    z-index: 2;
+    scroll-snap-align: start;
 }
 
-.wrm img{
+#absoluite_wala_div::-webkit-scrollbar {
+    display: none;
+}
+#absoluite_wala_div {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;     /* Firefox */
+}
+
+.written_material img{
+    height: 100%;
     width: 100%;
+    object-fit: cover;
     position: absolute;
-    bottom: 0;
 }
 
-.wrm h1{
-    position: absolute;
-    font-family: "mcf", sans-serif;
-    text-transform: uppercase;
+.written_material h1{
+    font-family: 'mcf', sans-serif;
     font-size: 3.5vw;
+    color: #f4f4f4;
+    text-transform: uppercase;
     line-height: 1;
-    color: #FDF5DE;
+    position: absolute;
 }
 
-.wrm p{
+.written_material p{
     position: absolute;
     color: #FDF5DE;
-    font-family: "Finger Paint", sans-serif !important;
+    font-family: 'Finger Paint', sans-serif;
+    font-size: 1.1vw;
 }
 
-#wr1 h1{
+
+#page2 h1{
     bottom: 5vw;
     right: 8vw;
 }
 
-#wr2 h1{
+#page3 h1{
     bottom: 6vw;
     left: 4vw;
 }
 
-#wr2 p{
+#page3 p{
     font-size: 1.1vw;
     bottom: 2vw;
     left: 4vw;
 }
 
-#wr3 h1{
+#page4 h1{
     font-size: 4vw;
     bottom: 4vw;
     right: 5vw;
 }
 
-#wr4 h1{
+#page5 h1{
     bottom: 6vw;
     left: 4vw;
 }
 
-#wr4 p{
+#page5 p{
     font-size: 1.1vw;
     bottom: 2vw;
     left: 4vw;
 }
 
-#wr5 h1{
+#page6 h1{
     bottom: 6vw;
     left: 4vw;
 }
 
-#wr5 p{
-    font-size: 1.1vw;
-    bottom: 2vw;
-    left: 4vw;
-}
-
-#wr6 h1{
+#page7 h1{
     bottom: 10vw;
     left: 34vw;
-    color: #FDF5DE;
-}
-
-#wr7{
-    height: 120vh;
-}
-
-#wr7 h1{
-    font-size: 15vw;
-    line-height: 0.9;
-    color: #FDF5DE;
-}
-
-#wr8{
-    background: linear-gradient( to top, #1774BD 50%, transparent);
-}
-
-#footer{
-    height: 60%;
-    width: 100%;
-    position: absolute;
-    bottom: 0;
-}
-
-#footer_up{
-    height: 80%;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    padding-top: 20vh;
-}
-
-#wr8 h1{
-    font-family: "Finger Paint", sans-serif;
-    position: absolute;
-    top: 40%;
-    left: 1vw;
-    font-size: 10.6vw;
-    font-weight: 300;
-    color: #FDF5DE;
-    border-bottom: 2px solid #9ED5FE;
-    line-height: 1.4;
-}
-
-#wr8 img{
-    position: absolute;
-    top: 20%;
-    left: 35vw;
-    height: 115vh;
-    width: 60vh;
 }
 
 

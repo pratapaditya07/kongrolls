@@ -1,141 +1,31 @@
+// Get elements
+const mainDiv = document.getElementById('main');
+const absoluteDiv = document.getElementById('absolute_wala_div');
+const videoElement = document.querySelector('#main video');
 
-/* document.addEventListener("scroll", () => {
-    const scrollingDiv = document.querySelector(".scrolling-div");
-    if (!scrollingDiv) return;
-    
-    const scrollPosition = window.scrollY;
-    const images = [
-        "media/image1.png",
-        "media/image2.png",
-        "media/image3.png",
-        "media/image4.png",
-        "media/image5.png",
-        "media/image6.png",
-        "media/image7.png",
-        "media/image7.png"
-    ];
+// Function to change background image based on scrolled section
+function changeBackgroundImage() {
+const sections = document.querySelectorAll('.written_material');
+const currentScrollPosition = absoluteDiv.scrollTop;
+const sectionHeight = window.innerHeight;
+  // Determine which section is currently in view
+let currentSectionIndex = Math.floor(currentScrollPosition / sectionHeight);
 
-    const index = Math.min(Math.floor(scrollPosition / window.innerHeight), images.length - 1);
-    scrollingDiv.style.backgroundImage = `url('${images[index]}')`;
-}); */
+  // Change background image
+if (currentSectionIndex >= 0 && currentSectionIndex < 7) {
+    mainDiv.style.backgroundImage = `url(/media/image${(currentSectionIndex-1) + 1}.png)`;
+}
 
+  // Hide video if first section scrolls up
+if (currentSectionIndex > 0) {
+    videoElement.style.display = 'none';
+} else if (videoElement) {
+    videoElement.style.display = 'block';
+}
+}
 
-document.addEventListener("scroll", () => {
-    const scrollingDiv = document.querySelector(".scrolling-div");
-    if (!scrollingDiv) return;
+// Add event listener to scroll event
+absoluteDiv.addEventListener('scroll', changeBackgroundImage);
 
-    const scrollPosition = window.scrollY;
-    const media = [
-        { loading:"early", type: "video", src: "media/opening_video.mp4" },
-        { type: "image", src: "media/image2.png" },
-        { type: "image", src: "media/image3.png" },
-        { type: "image", src: "media/image4.png" },
-        { type: "image", src: "media/image5.png" },
-        { type: "image", src: "media/image6.png" },
-        { type: "image", src: "media/image7.png" },
-        { type: "image", src: "media/image7.png" }
-    ];
-
-    const index = Math.min(Math.floor(scrollPosition / window.innerHeight), media.length - 1);
-    const currentMedia = media[index];
-
-    if (currentMedia.type === "video") {
-        scrollingDiv.innerHTML = `<video autoplay loop muted playsinline>
-        <source src="${currentMedia.src}" type="video/mp4"></video>`;
-    } else {
-        scrollingDiv.style.backgroundImage = `url('${currentMedia.src}')`;
-        scrollingDiv.innerHTML = ""; // Clear video if switching to an image
-    }
-});
-
-
-
-// GSAP Animation for #wr8 Image
-gsap.from("#wr8 img", {
-    y: "50%",
-    opacity: 0,
-    scrollTrigger: {
-        trigger: "#wr8 img",
-        start: "top 110%",
-        end: "top 80%",
-        scrub: 1
-    }
-});
-
-
-gsap.to("#wr1 h1", {
-    y: "-150%",
-    opacity: 0,
-    scrollTrigger: {
-        trigger: "#wr1 h1",
-        scroll:".content",
-        start: "top 72%",
-        end: "top 68.5%",
-        scrub: 1
-    }
-});
-
-gsap.to("#wr2 h1", {
-    y: "-150%",
-    opacity: 0,
-    scrollTrigger: {
-        trigger: "#wr2 h1",
-        scroll:".content",
-        start: "top 72%",
-        end: "top 69.5%",
-        scrub: 1
-    }
-});
-
-gsap.to("#wr3 h1", {
-    y: "-150%",
-    opacity: 0,
-    scrollTrigger: {
-        trigger: "#wr3 h1",
-        scroll:".content",
-        start: "top 72%",
-        end: "top 68.5%",
-        scrub: 1
-    }
-});
-
-gsap.to("#wr4 h1", {
-    y: "-150%",
-    opacity: 0,
-    scrollTrigger: {
-        trigger: "#wr4 h1",
-        scroll:".content",
-        start: "top 72%",
-        end: "top 68.5%",
-        scrub: 1
-    }
-});
-
-gsap.to("#wr5 h1", {
-    y: "-150%",
-    opacity: 0,
-    scrollTrigger: {
-        trigger: "#wr5 h1",
-        scroll:".content",
-        start: "top 72%",
-        end: "top 68.5%",
-        scrub: 1
-    }
-});
-
-gsap.to("#wr6 h1", {
-    y: "-150%",
-    opacity: 0,
-    scrollTrigger: {
-        trigger: "#wr6 h1",
-        scroll:".content",
-        start: "top 45%",
-        end: "top 38.5%",
-        scrub: 1
-    }
-});
-
-
-
-
-
+// Initial setup
+changeBackgroundImage();
